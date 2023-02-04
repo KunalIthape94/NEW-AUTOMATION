@@ -13,9 +13,7 @@ import com.UtilsLayer.ReusableClass;
 
 
 public class ApplicationLaunchPage {
-	public static Properties prop;
-	public static FileInputStream fis;
-	private static Object property;
+	
 	public static WebDriver driver;
 	public static ReusableClass res;
 	/**
@@ -25,11 +23,9 @@ public class ApplicationLaunchPage {
 	public static void browserInit() {
 		res=new ReusableClass();
 		res.propertiesReader();
-//		String appURL=prop.getProperty("App_URL");
 		String appURL= (String) res.getProperty("App_URL");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		
 		driver = new ChromeDriver();
 		driver.get(appURL);
 		driver.manage().window().maximize();
