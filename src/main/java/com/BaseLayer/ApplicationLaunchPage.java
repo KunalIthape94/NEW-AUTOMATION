@@ -18,6 +18,7 @@ public class ApplicationLaunchPage {
 	public static ReusableClass res;
 	/**
 	 * @author Kunal
+	 *
 	 * 
 	 */
 	public static void browserInit() {
@@ -26,9 +27,9 @@ public class ApplicationLaunchPage {
 		String appURL= (String) res.getProperty("App_URL");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver = new ChromeDriver();
 		driver.get(appURL);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		
